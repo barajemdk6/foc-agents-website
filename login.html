@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login – FOC Agents</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="auth-wrap">
+    <div class="auth-card">
+      <a class="brand" href="index.html" style="margin-bottom:10px; display:inline-flex;">
+        <span class="brand-badge" aria-hidden="true">FOC</span>
+        <span class="brand-text">FOC Agents</span>
+      </a>
+      <h1>Welcome back</h1>
+      <p class="subtle">Login to your account</p>
+      <form onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
+        <input class="input" type="email" placeholder="Email" required>
+        <input class="input" type="password" placeholder="Password" required>
+        <button class="button block" type="submit">Login</button>
+      </form>
+      <p class="subtle" style="margin-top:12px;">Don’t have an account? <a href="signup.html">Sign Up</a></p>
+    </div>
+  </div>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard – FOC Agents</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="dashboard-layout">
+    <aside class="sidebar">
+      <a class="brand" href="index.html">
+        <span class="brand-badge" aria-hidden="true">FOC</span>
+        <span class="brand-text">FOC Agents</span>
+      </a>
+      <nav class="menu">
+        <a class="active" href="#">Dashboard</a>
+        <a href="#">Leads</a>
+        <a href="#">Customers</a>
+        <a href="#">Settings</a>
+        <a href="index.html">Logout</a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <h2>Overview</h2>
+        <div class="right">
+          <button class="button" title="Notifications">🔔</button>
+          <div class="brand-badge" title="Profile" aria-label="Profile"></div>
+        </div>
+      </div>
+
+      <section class="card-grid">
+        <div class="kpi-card"><h4>Total Leads</h4><div class="value">248</div></div>
+        <div class="kpi-card"><h4>Customers</h4><div class="value">86</div></div>
+        <div class="kpi-card"><h4>Sales</h4><div class="value">$42,300</div></div>
+      </section>
+
+      <section class="table-card">
+        <header>
+          <h3 style="margin:0;">Leads</h3>
+          <button id="addLeadBtn" class="button">Add New Lead</button>
+        </header>
+        <div style="overflow:auto;">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="leadsBody">
+              <tr>
+                <td>Jane Cooper</td>
+                <td>jane.cooper@example.com</td>
+                <td><span class="status new">New</span></td>
+              </tr>
+              <tr>
+                <td>Wade Warren</td>
+                <td>wade.warren@example.com</td>
+                <td><span class="status contact">Contacted</span></td>
+              </tr>
+              <tr>
+                <td>Jenny Wilson</td>
+                <td>jenny.wilson@example.com</td>
+                <td><span class="status closed">Closed</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.getElementById('addLeadBtn').addEventListener('click', function() {
+      const name = prompt('Lead name:');
+      if (!name) return;
+      const email = prompt('Lead email:');
+      if (!email) return;
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td>${name}</td><td>${email}</td><td><span class="status new">New</span></td>`;
+      document.getElementById('leadsBody').prepend(tr);
+    });
+  </script>
+</body>
+</html>
